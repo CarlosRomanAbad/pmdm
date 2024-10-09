@@ -33,4 +33,24 @@ $(document).ready(function() {
         $("h1").attr("style", "color: yellow");
     });
 
+
+    $(".test").append("<li>Esto es un h1</li>");
+
+
+    let i = 0;
+        $(document).on("click", "#add", function() {
+            
+            
+
+                $(".text").append("<p>Esto"+ ++i+" es un parrafo  </p> <button class='remove'>Eliminar</button>");
+                
+                
+        });
+   
+        $(document).on("click", ".remove", function() {
+            
+            $(this).prev().remove();
+            
+            $(this).remove(); 
+        });
 });

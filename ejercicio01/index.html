@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            background-color: #000000;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    <title>Día y Noche</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>
-    
-    <button class="hacer-dia">Hacer de dia</button>
- <script src="index.js"></script>s
+
+<body id="light" class="container mt-5">
+
+    <div class="text-center">
+        <h1 class="mb-4">Día y Noche</h1>
+        <p class="lead">El día es el período de tiempo en el que el sol ilumina la Tierra. Durante el día, la luz solar permite que las plantas realicen la fotosíntesis, y los seres humanos y animales llevan a cabo la mayoría de sus actividades.</p>
+        <p class="lead">La noche es el período de oscuridad entre el atardecer y el amanecer. Durante la noche, la ausencia de luz solar permite que el cuerpo humano descanse y se recupere, y muchos animales nocturnos salen a buscar alimento.</p>
+        <button id="btn-dark" class="btn btn-dark mt-3">Modo Oscuro</button>
+        <button id="btn-light" class="btn btn-light mt-3" style="display: none;">Modo Claro</button>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   
+    <script src="index.js"></script>
 </body>
+
 </html>
