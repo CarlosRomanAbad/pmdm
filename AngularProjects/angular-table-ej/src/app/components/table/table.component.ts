@@ -37,4 +37,15 @@ export class TableComponent {
   mostrarDatos(){
     console.log(this.dataBase);
   }
+
+  toggleColumn(column: string, checked: boolean) {
+    if (checked) {
+      if (!this.displayedColumns.includes(column)) {
+        this.displayedColumns.push(column);
+      }
+    } else {
+      this.displayedColumns = this.displayedColumns.filter(c => c !== column);
+    }
+  }
+
 }

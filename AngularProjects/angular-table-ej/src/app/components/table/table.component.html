@@ -1,47 +1,70 @@
+<div class="checkbox-container">
+  <span class="m-2">
+      <mat-checkbox (change)="toggleColumn('numAlumno', $event.checked)"
+          [checked]="displayedColumns.includes('numAlumno')">Id</mat-checkbox>
+  </span>
+  <span class="m-2">
+      <mat-checkbox (change)="toggleColumn('nombre', $event.checked)"
+          [checked]="displayedColumns.includes('nombre')">Nombre</mat-checkbox>
+  </span>
+  <span class="m-2">
+      <mat-checkbox (change)="toggleColumn('apellidos', $event.checked)"
+          [checked]="displayedColumns.includes('apellidos')">Apellidos</mat-checkbox>
+  </span>
+  <span class="m-2">
+      <mat-checkbox (change)="toggleColumn('nif', $event.checked)"
+          [checked]="displayedColumns.includes('nif')">NIF</mat-checkbox>
+  </span>
+  <span class="m-2">
+      <mat-checkbox (change)="toggleColumn('edad', $event.checked)"
+          [checked]="displayedColumns.includes('edad')">Edad</mat-checkbox>
+  </span>
+  <span class="m-2">
+      <mat-checkbox (change)="toggleColumn('cursoMatriculado', $event.checked)"
+          [checked]="displayedColumns.includes('cursoMatriculado')">Curso</mat-checkbox>
+  </span>
+</div>
+
+
 <table mat-table [dataSource]="dataBase" class="mat-elevation-z8">
 
 
-  
-
-    <ng-container matColumnDef="numAlumno">
-      <th mat-header-cell *matHeaderCellDef> Nro. Alumno </th>
+  <ng-container matColumnDef="numAlumno">
+      <th mat-header-cell *matHeaderCellDef> Nº </th>
       <td mat-cell *matCellDef="let element"> {{element.numAlumno}} </td>
-    </ng-container>
-  
-  
-    <ng-container matColumnDef="nombre">
+  </ng-container>
+
+
+  <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef> Nombre </th>
       <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-    </ng-container>
-  
+  </ng-container>
 
-    <ng-container matColumnDef="nif">
-      <th mat-header-cell *matHeaderCellDef> Nif </th>
-      <td mat-cell *matCellDef="let element"> {{element.nif}} </td>
-    </ng-container>
-  
 
-    <ng-container matColumnDef="apellidos">
+  <ng-container matColumnDef="apellidos">
       <th mat-header-cell *matHeaderCellDef> Apellidos </th>
       <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
-    </ng-container>
+  </ng-container>
 
-    <ng-container matColumnDef="edad">
-        <th mat-header-cell *matHeaderCellDef> Edad </th>
-        <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
-      </ng-container>
-      
-      <ng-container matColumnDef="cursoMatriculado">
-        <th mat-header-cell *matHeaderCellDef> CursoMatriculado </th>
-        <td mat-cell *matCellDef="let element"> {{element.cursoMatriculado}} </td>
-      </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
 
-  
-  
+  <ng-container matColumnDef="nif">
+      <th mat-header-cell *matHeaderCellDef> NIF </th>
+      <td mat-cell *matCellDef="let element"> {{element.nif}} </td>
+  </ng-container>
 
-  
-  
+
+  <ng-container matColumnDef="edad">
+      <th mat-header-cell *matHeaderCellDef> Edad </th>
+      <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="cursoMatriculado">
+      <th mat-header-cell *matHeaderCellDef> Curso </th>
+      <td mat-cell *matCellDef="let element"> {{element.cursoMatriculado}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
