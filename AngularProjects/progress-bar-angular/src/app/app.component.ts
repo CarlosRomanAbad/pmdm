@@ -13,6 +13,8 @@ export class AppComponent {
 
   valor: number = 50;
 
+  altura = 0;
+
 comprobarValor(valor: number) : void{
   if(valor < 0){
     this.valor = 0;

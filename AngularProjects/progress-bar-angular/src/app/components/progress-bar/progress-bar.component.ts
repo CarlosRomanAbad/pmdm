@@ -25,4 +25,12 @@ export class ProgressBarComponent {
   @Input() color = 'primary';
 
 
+  @Input () altura  = 0
+
+
+  mostrarAlerta(altura : number){
+    if(altura > 20){
+      alert('mides mas de 20')
+    }
+  }
 }
