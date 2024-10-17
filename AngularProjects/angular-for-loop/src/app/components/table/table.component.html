@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>
+                        Country
+                    </th>
+                    <th>
+                        Phone Prefix
+                    </th>
+                    <th>
+                        Flag
+                    </th>
+                </thead>
+                <tbody>
+                    @for (country of countries; track $index) {
+                        <tr>
+                            <td>
+                                {{ country.nombre}}
+                            </td>
+                            <td>
+                                {{ country.prefix}}
+                            </td>
+                            <td>
+                                {{country.flag}}
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
