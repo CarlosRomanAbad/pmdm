@@ -25,6 +25,9 @@ export class VehiculoComponent implements OnInit {
   }
 
 
-  
+  cargarFotoVehiculo(url : string) {
+    let id = url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`;
+  }
   
 }

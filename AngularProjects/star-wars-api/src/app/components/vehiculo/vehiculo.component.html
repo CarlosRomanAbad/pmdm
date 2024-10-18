@@ -1,9 +1,15 @@
+
+<header>
+    <h1 class="text-center text-warning"><strong>SWAPI VEHICLES</strong></h1>
+</header>
 <div class="container">
+    
     <div class="row">
       @for (vehiculo of listadoVehiculos ; track vehiculo.name) {
         <div class="col-md-4">
           <div class="card mb-4">
             <div class="card-body">
+                <img [src]="cargarFotoVehiculo(vehiculo.url)" class="img">
               <h5 class="card-title">{{ vehiculo.name }}</h5>
               <p class="card-text"><strong>Model:</strong> {{ vehiculo.model }}</p>
               <p class="card-text"><strong>Manufacturer:</strong> {{ vehiculo.manufacturer }}</p>
