@@ -8,11 +8,14 @@ import { Vehiculo } from '../interface/vehiculo.interface';
 })
 export class VehiculoService {
 
+  private apiUrl = 'https://swapi.dev/api/vehicles/';
+
+
   constructor(private http : HttpClient) { }
 
 
-  getAllVehiculos () :  Observable<Vehiculo[]>{
-    return this.http.get<Vehiculo[]>('http://localhost:3000/vehicles');
+  getVehicles(): Observable<Vehiculo []> {
+    return this.http.get<Vehiculo[]>(this.apiUrl);
   }
    
 }

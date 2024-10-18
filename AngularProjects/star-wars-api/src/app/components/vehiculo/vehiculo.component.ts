@@ -12,15 +12,19 @@ import { VehiculoService } from '../../services/vehiculo.service';
 export class VehiculoComponent implements OnInit {
 
 
-  listadoVehiculos: Vehiculo[] = [];
+  listadoVehiculos: any[] = [];
 
   constructor(private vehiculoService: VehiculoService) { }
 
 
   ngOnInit(): void {
-    
-    this.vehiculoService.getAllVehiculos().subscribe((data: Vehiculo[]) => {
-      this.listadoVehiculos = data;
+    this.vehiculoService.getVehicles().subscribe((data: any) => {
+      console.log(data); 
+      this.listadoVehiculos = data.results; 
     });
   }
+
+
+  
+  
 }

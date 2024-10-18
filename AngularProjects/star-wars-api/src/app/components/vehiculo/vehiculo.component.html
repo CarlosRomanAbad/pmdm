@@ -1,3 +1,23 @@
-@for (vehiculo of listadoVehiculos ; track vehiculo.name) {
-    <p>{{vehiculo.name}}</p>
-}
+<div class="container">
+    <div class="row">
+      @for (vehiculo of listadoVehiculos ; track vehiculo.name) {
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">{{ vehiculo.name }}</h5>
+              <p class="card-text"><strong>Model:</strong> {{ vehiculo.model }}</p>
+              <p class="card-text"><strong>Manufacturer:</strong> {{ vehiculo.manufacturer }}</p>
+              <p class="card-text"><strong>Cost in Credits:</strong> {{ vehiculo.cost_in_credits }}</p>
+              <p class="card-text"><strong>Length:</strong> {{ vehiculo.length }}</p>
+              <p class="card-text"><strong>Max Speed:</strong> {{ vehiculo.max_atmosphering_speed }}</p>
+              <p class="card-text"><strong>Crew:</strong> {{ vehiculo.crew }}</p>
+              <p class="card-text"><strong>Passengers:</strong> {{ vehiculo.passengers }}</p>
+              <p class="card-text"><strong>Cargo Capacity:</strong> {{ vehiculo.cargo_capacity }}</p>
+              <p class="card-text"><strong>Consumables:</strong> {{ vehiculo.consumables }}</p>
+              <p class="card-text"><strong>Vehicle Class:</strong> {{ vehiculo.vehicle_class }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
