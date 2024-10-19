@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Vehiculo } from '../../interface/vehiculo.interface';
+import { RespuestaSwapi, Vehiculo } from '../../interface/vehiculo.interface';
 import { VehiculoService } from '../../services/vehiculo.service';
 
 
@@ -12,15 +12,15 @@ import { VehiculoService } from '../../services/vehiculo.service';
 export class VehiculoComponent implements OnInit {
 
 
-  listadoVehiculos: any[] = [];
+  listadoVehiculos: Vehiculo[] = [];
 
   constructor(private vehiculoService: VehiculoService) { }
 
 
   ngOnInit(): void {
-    this.vehiculoService.getVehicles().subscribe((data: any) => {
-      console.log(data); 
-      this.listadoVehiculos = data.results; 
+    this.vehiculoService.getVehicles().subscribe((vehiculo : RespuestaSwapi) => {
+      console.log(vehiculo.results); 
+      this.listadoVehiculos = vehiculo.results; 
     });
   }
 
