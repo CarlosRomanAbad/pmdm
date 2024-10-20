@@ -13,7 +13,7 @@ export class VehiculoService {
   constructor(private http : HttpClient) { }
 
 
-  getVehicles(masVehiculoas? : string): Observable<RespuestaSwapi> {
-    return this.http.get<RespuestaSwapi>(`https://swapi.dev/api/vehicles${{masVehiculoas} ? `?${masVehiculoas}` : ''}`);  }
+  getVehicles(masVehiculos? : string): Observable<RespuestaSwapi> {
+    return this.http.get<RespuestaSwapi>(`https://swapi.dev/api/vehicles${{masVehiculos} ? `?${masVehiculos}` : ''}`);  }
    
 }
