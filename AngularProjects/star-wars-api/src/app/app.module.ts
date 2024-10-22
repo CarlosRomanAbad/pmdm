@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VehiculoComponent } from './components/vehiculo/vehiculo.component';
 import { provideHttpClient } from '@angular/common/http';
+import { PeopleListComponent } from './components/people-list/people-list.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    VehiculoComponent
+    VehiculoComponent,
+    PeopleListComponent,
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

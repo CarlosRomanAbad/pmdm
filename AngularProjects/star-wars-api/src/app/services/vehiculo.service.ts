@@ -14,6 +14,6 @@ export class VehiculoService {
 
 
   getVehicles(masVehiculos? : string): Observable<RespuestaSwapi> {
-    return this.http.get<RespuestaSwapi>(`https://swapi.dev/api/vehicles${{masVehiculos} ? `?${masVehiculos}` : ''}`);  }
+    return this.http.get<RespuestaSwapi>(`https://swapi.dev/api/vehicles`);  }
    
 }
