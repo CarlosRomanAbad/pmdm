@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        @for (c of listadoPersonajes; track $index) {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <h5 class="card-title text-center"><strong>{{c.name}}</strong></h5>
+                    <img [src]="c.image" class="card-img-top" alt="{{c.name}}">
+                    <div class="card-body">
+                        
+                        <p class="card-text"><strong>Status:</strong> {{c.status}}</p>
+                        <p class="card-text"><strong>Species:</strong> {{c.species}}</p>
+                        <p class="card-text"><strong>Gender:</strong> {{c.gender}}</p>
+                        <p class="card-text"><strong>Origin:</strong> {{c.origin.name}}</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

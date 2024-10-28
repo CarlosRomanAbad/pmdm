@@ -1,0 +1,25 @@
+<header>
+    <h1 class="text-center text-warning"><strong>SWAPI CHARACTERS</strong></h1>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        @for (personaje of listadoPeople; track $index) {
+            <div class="card h-100">
+                <img [src]="cargarFotoPersonaje(personaje.url)" class="card-img-top img-fluid" alt="{{ personaje.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ personaje.name }}</h5>
+                    <p class="card-text"><strong>Height:</strong> {{ personaje.height }}</p>
+                    <p class="card-text"><strong>Mass:</strong> {{ personaje.mass }}</p>
+                    <p class="card-text"><strong>Hair Color:</strong> {{ personaje.hair_color }}</p>
+                    <p class="card-text"><strong>Skin Color:</strong> {{ personaje.skin_color }}</p>
+                    <p class="card-text"><strong>Eye Color:</strong> {{ personaje.eye_color }}</p>
+                    <p class="card-text"><strong>Birth Year:</strong> {{ personaje.birth_year }}</p>
+                    <p class="card-text"><strong>Gender:</strong> {{ personaje.gender }}</p>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+
+
+
