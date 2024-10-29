@@ -14,12 +14,15 @@ export class PokemonComponent implements OnInit {
   @Input() life: number = 100;
   @Input() isTurn: boolean = false;
   @Output() onAttackDone = new EventEmitter<number>();
+  @Output() cambiarPokemon = new EventEmitter<void>();
 
+
+  newPokemonId! : number 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
     if (this.pokemonId) {
-      this.pokemonService.getPokemon(this.pokemonId).subscribe((pokemon: PokemonResponse) => {
+      this.pokemonService.getPokemon().subscribe((pokemon: PokemonResponse) => {
         this.pokemon = pokemon;
       });
     }
@@ -29,4 +32,12 @@ export class PokemonComponent implements OnInit {
     const damage = Math.floor(Math.random() * (50 - 30 + 1)) + 30; 
     this.onAttackDone.emit(damage);
   }
+
+  cambiarPokemons(): void {
+    this.pokemonService.getPokemon().subscribe((pokemon: PokemonResponse) => {
+      this.pokemon = pokemon;
+    })
+  }
+
+  
 }

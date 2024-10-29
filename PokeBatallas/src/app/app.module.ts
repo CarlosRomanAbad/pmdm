@@ -8,6 +8,7 @@ import { PokemonService } from './services/pokemon.service';
 import { PokemonBattleComponent } from './components/pokemon-battle/pokemon-battle.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule
     
   ],
   providers: [provideHttpClient(), PokemonService],
