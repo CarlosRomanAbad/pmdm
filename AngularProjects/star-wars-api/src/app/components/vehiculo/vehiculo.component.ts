@@ -34,6 +34,6 @@ export class VehiculoComponent implements OnInit {
     return `https://starwars-visualguide.com/assets/img/vehicles/${id}.jpg`;
   }
   
-
+  
   
 }
