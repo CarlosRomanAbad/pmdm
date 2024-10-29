@@ -45,6 +45,8 @@ export class PokemonBattleComponent implements OnInit {
       }
     }
 
+    
+
     this.pokemonTurn = this.pokemonTurn === 1 ? 2 : 1;
   }
 

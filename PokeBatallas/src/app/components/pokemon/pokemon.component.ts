@@ -52,6 +52,7 @@ export class PokemonComponent implements OnInit {
   cambiarPokemons(): void {
     this.pokemonService.getPokemon().subscribe((pokemon: PokemonResponse) => {
       this.pokemon = pokemon;
+      this.numeroCuraciones = 3;
     })
   }
 
