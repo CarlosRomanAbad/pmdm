@@ -13,12 +13,10 @@ export class PokemonService {
   constructor(private http: HttpClient) { }
 
    getPokemon(): Observable<PokemonResponse> {
-    const randomId = Math.floor(Math.random() * 898) + 1; // Generar un ID aleatorio entre 1 y 898
+    const randomId = Math.floor(Math.random() * 898) + 1; 
     return this.http.get<PokemonResponse>(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
   }
 
-  getPokemonById(id: number): Observable<PokemonResponse> {
-    return this.http.get<PokemonResponse>(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  }
+ 
 
 }
