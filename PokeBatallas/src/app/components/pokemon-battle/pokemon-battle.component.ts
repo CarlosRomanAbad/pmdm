@@ -31,7 +31,7 @@ export class PokemonBattleComponent implements OnInit {
       this.lifePokemon1 = Math.max(this.lifePokemon1 - damage, 0);
       if (this.lifePokemon1 <= 0) {
         setTimeout(() => {
-          alert('Pokemon 2 ha ganado');
+          alert('Pokemon 2 ha ganado, reinicie la partida o cambie de pokemon');
         }, 500); 
         return;
       }
@@ -39,7 +39,7 @@ export class PokemonBattleComponent implements OnInit {
       this.lifePokemon2 = Math.max(this.lifePokemon2 - damage, 0);
       if (this.lifePokemon2 <= 0) {
         setTimeout(() => {
-          alert('Pokemon 1 ha ganado');
+          alert('Pokemon 1 ha ganado, reinicie la partida o cambie de pokemon');
         }, 500); 
         return;
       }
