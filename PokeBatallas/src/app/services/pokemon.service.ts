@@ -8,11 +8,11 @@ import { PokemonResponse } from '../interface/pokemon-interface';
 })
 export class PokemonService {
 
-  private apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+  
 
   constructor(private http: HttpClient) { }
 
-  getPokemon(): Observable<PokemonResponse> {
-    return this.http.get<PokemonResponse>(this.apiUrl);
+  getPokemon(id  : number): Observable<PokemonResponse> {
+    return this.http.get<PokemonResponse>(`https://pokeapi.co/api/v2/pokemon/${id}`);
   }
 }
