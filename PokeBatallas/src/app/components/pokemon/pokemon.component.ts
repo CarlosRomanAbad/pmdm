@@ -16,6 +16,9 @@ export class PokemonComponent implements OnInit {
   @Output() onAttackDone = new EventEmitter<number>();
   @Output() cambiarPokemon = new EventEmitter<void>();
 
+  
+  numeroCuraciones : number = 3;
+
 
   newPokemonId! : number 
   constructor(private pokemonService: PokemonService) { }
@@ -31,6 +34,19 @@ export class PokemonComponent implements OnInit {
   attack(): void {
     const damage = Math.floor(Math.random() * (50 - 30 + 1)) + 30; 
     this.onAttackDone.emit(damage);
+  }
+
+  curar() : void {
+    if(this.numeroCuraciones > 0){
+      if(this.life > 90){
+        alert('no puede curar si tiene mas de 90 de vida')
+      }
+      else{
+        this.life = this.life + 10;
+        this.numeroCuraciones = this.numeroCuraciones - 1;
+      }
+      
+    }
   }
 
   cambiarPokemons(): void {

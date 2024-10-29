@@ -1,27 +1,36 @@
-<div class="card" style="width: 18rem;">
+<div class="card text-center" style="width: 18rem;">
   <img [src]="pokemon.sprites.front_default" class="card-img-top" [alt]="pokemon.name">
+  
   <div class="card-body">
     <h5 class="card-title">{{pokemon.name}}</h5>
+    <p class="card-text mb-2">
+      <strong>Height:</strong> {{pokemon.height}}<br>
+      <strong>Weight:</strong> {{pokemon.weight}}
+    </p>
     <p class="card-text">
-      Height: {{pokemon.height}}<br>
-      Weight: {{pokemon.weight}}
+      <strong>Life:</strong> {{life}} / 100
     </p>
-    <p>
-      Life: {{life}} / 100
-    </p>
+    <div>
+      <strong>Numero de curaciones: {{numeroCuraciones}}</strong>
+    </div>
+    
     <ngb-progressbar class="mb-3" type="success" [value]="life"></ngb-progressbar>
 
     @if (isTurn) {
-      <button (click)="attack()" class="btn btn-primary">Attack</button>
+      <div class="row mb-2">
+        <div class="col">
+          <button (click)="attack()" class="btn btn-primary w-100">Attack</button>
+        </div>
+        <div class="col">
+          <button (click)="curar()" class="btn btn-success w-100">Curar</button>
+        </div>
+      </div>
     }
 
     @else() {
-      <button [disabled]="true" class="btn btn-primary">Waiting for the oponent</button>
-
+      <button [disabled]="true" class="btn btn-secondary w-100 mb-2">Waiting for the opponent</button>
     }
     
-    <div class="py-2">
-      <button class="btn btn-danger" (click)="cambiarPokemons()">Cambiar Pokemon</button>
-    </div>
+    <button class="btn btn-danger w-100" (click)="cambiarPokemons()">Cambiar Pokemon</button>
   </div>
 </div>
