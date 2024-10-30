@@ -14,8 +14,6 @@ export class PokemonBattleComponent implements OnInit {
   pokemonTurn: number = Math.floor(Math.random() * 2) + 1; 
   pokemon1Id: number | undefined;
   pokemon2Id: number | undefined;
-  @ViewChild(PokemonComponent) pokemon1Component: PokemonComponent | undefined;
-  @ViewChild(PokemonComponent) pokemon2Component: PokemonComponent | undefined;
   pokemon : PokemonResponse | undefined;
 
   constructor(private pokemonService: PokemonService) { }
