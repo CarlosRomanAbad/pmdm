@@ -9,12 +9,14 @@ import { PokemonBattleComponent } from './components/pokemon-battle/pokemon-batt
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { InfoPipe } from './pipes/info.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
-    PokemonBattleComponent
+    PokemonBattleComponent,
+    InfoPipe
   ],
   imports: [
     BrowserModule,

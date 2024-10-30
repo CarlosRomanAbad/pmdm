@@ -4,11 +4,9 @@
   <img [src]="pokemon.sprites.front_default" class="card-img-top" [alt]="pokemon.name">
   
   <div class="card-body">
-
-    
     <p class="card-text mb-2">
-      <strong>Height:</strong> {{pokemon.height}}<br>
-      <strong>Weight:</strong> {{pokemon.weight}}
+      <strong>Height:</strong> {{pokemon.height | info:'height'}}<br>
+      <strong>Weight:</strong> {{pokemon.weight | info:'weight'}}
     </p>
     <p class="card-text">
       <strong>Life:</strong> {{life}} / 100
@@ -19,7 +17,7 @@
     
     <ngb-progressbar class="mb-3" type="success" [value]="life"></ngb-progressbar>
 
-    @if (isTurn) {
+    <div *ngIf="isTurn; else waiting">
       <div class="row mb-2">
         <div class="col">
           <button (click)="attack()" class="btn btn-primary w-100">Attack</button>
@@ -28,11 +26,10 @@
           <button (click)="curar()" class="btn btn-success w-100">Curar</button>
         </div>
       </div>
-    }
-
-    @else() {
+    </div>
+    <ng-template #waiting>
       <button [disabled]="true" class="btn btn-secondary w-100 mb-2">Waiting for the opponent</button>
-    }
+    </ng-template>
     
     <button class="btn btn-danger w-100" (click)="cambiarPokemons()">Cambiar Pokemon</button>
   </div>
