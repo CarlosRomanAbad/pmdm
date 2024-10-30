@@ -15,6 +15,8 @@ export class PokemonBattleComponent implements OnInit {
   pokemon1Id: number | undefined;
   pokemon2Id: number | undefined;
   pokemon : PokemonResponse | undefined;
+  @ViewChild('pokemon1') pokemon1!: PokemonComponent;
+  @ViewChild('pokemon2') pokemon2!: PokemonComponent;
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -53,5 +55,8 @@ export class PokemonBattleComponent implements OnInit {
     this.lifePokemon1 = 100;
     this.lifePokemon2 = 100;
     this.pokemonTurn = Math.floor(Math.random() * 2) + 1;
+    this.pokemon1.numeroCuraciones = 3;
+    this.pokemon2.numeroCuraciones = 3;
+    
   }
 }

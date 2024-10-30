@@ -2,6 +2,7 @@
   <div class="row justify-content-end">
       <div class="col-md-7 offset-md-1">
           <app-pokemon 
+              #pokemon1
               [pokemonId]="2" 
               [life]="lifePokemon1" 
               (onAttackDone)="handleAttack($event, 'pokemon2')"
@@ -10,6 +11,7 @@
       </div>
       <div class="col-md-4">
           <app-pokemon 
+              #pokemon2
               [pokemonId]="100" 
               [life]="lifePokemon2" 
               (onAttackDone)="handleAttack($event, 'pokemon1')"
