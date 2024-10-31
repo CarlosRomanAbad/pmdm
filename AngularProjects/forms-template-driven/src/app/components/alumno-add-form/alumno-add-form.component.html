@@ -1,0 +1,27 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-md-6">
+      <form>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="name" class="form-label">Name</label>
+            <input [(ngModel)]="alumno.nombre" type="text" class="form-control" id="name" name="name" placeholder="Name">
+          </div>
+          <div class="col">
+            <label for="numero" class="form-label">Phone Number</label>
+            <input [(ngModel)]="alumno.telefono" type="text" class="form-control" id="numero" name="numero" placeholder="Phone Number">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="edad" class="form-label">Edad</label>
+          <input [(ngModel)]="alumno.edad" type="number" class="form-control" id="edad" name="edad" placeholder="Age">
+        </div>
+        <div class="mb-3">
+          <label for="curso" class="form-label">Curso</label>
+          <select [(ngModel)]="alumno.curso" class="form-control" id="curso" name="curso">
+            <option *ngFor="let curso of cursos" [value]="curso">{{ curso }}</option>
+          </select>
+        </div>
+        <button (click)="addStudent()" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
