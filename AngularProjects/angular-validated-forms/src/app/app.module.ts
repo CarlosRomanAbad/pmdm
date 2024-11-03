@@ -4,19 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UserFormComponent } from './components/user-form/user-form.component';
 import { FormsModule } from '@angular/forms';
+import { UserDto } from './models/user.dto';
+import { FormularioRegistroComponent } from './components/user-form/user-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserFormComponent
+   FormularioRegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

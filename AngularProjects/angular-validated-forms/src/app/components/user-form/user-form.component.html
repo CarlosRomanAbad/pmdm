@@ -1,55 +1,63 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow-lg" style="width: 60%;">
-      <h2 class="card-title text-center mb-4">User Form</h2>
-      <form>
-        <div class="row mb-3">
-          <div class="col">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" id="name" class="form-control" [(ngModel)]="user.name" name="name" placeholder="Name">
-          </div>
-          <div class="col">
-            <label for="surname" class="form-label">Surname:</label>
-            <input type="text" id="surname" class="form-control" [(ngModel)]="user.surname" name="surname" placeholder="Surname">
-          </div>
+  <div class="card p-4 shadow-lg" style="width: 60%;">
+    <h2 class="card-title text-center mb-4">User Form</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="row mb-3">
+        <div class="col">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="user.name" name="name" placeholder="Name" required>
         </div>
-        
-        <div class="mb-3">
-          <label for="nif" class="form-label">NIF:</label>
-          <input type="text" id="nif" class="form-control" [(ngModel)]="user.nif" name="nif" placeholder="NIF">
+        <div class="col">
+          <label for="surname" class="form-label">Surname:</label>
+          <input type="text" id="surname" class="form-control" [(ngModel)]="user.surname" name="surname" placeholder="Surname" required>
         </div>
-        
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone:</label>
-          <input type="text" id="phone" class="form-control" [(ngModel)]="user.phone" name="phone" placeholder="Phone">
+      </div>
+      
+      <div class="mb-3">
+        <label for="nif" class="form-label">NIF:</label>
+        <div class="input-group">
+          <input type="text" id="nif" class="form-control" [(ngModel)]="user.nif" name="nif" placeholder="NIF" (input)="calculateNifLetter()" required>
+          <span class="input-group-text">{{ nifLetter }}</span>
         </div>
-        
-        <div class="mb-3">
-            <label for="sex" class="form-label">Sex:</label>
-            <select id="sex" class="form-select" [(ngModel)]="user.sex" name="sex">
-              <option value="" disabled selected>Select Option</option>
-              <option *ngFor="let option of sexOptions" [value]="option">{{ option }}</option>
-            </select>
-          </div>
-        
-        <div class="mb-3">
-          <label for="howMeetPage" class="form-label">How did you meet the page:</label>
-          <select id="howMeetPage" class="form-select" [(ngModel)]="user.howMeetPage" name="howMeetPage">
-            <option value="" disabled selected>Select Option</option>
-            <option *ngFor="let option of howMeetPageOptions" [value]="option">{{ option }}</option>
-          </select>
-        </div>
-        
-        <div class="mb-3">
-          <label for="password" class="form-label">Password:</label>
-          <input type="password" id="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password">
-        </div>
-        <div class="mb-3">
-            <label for="secondPassword" class="form-label">Repeat Password:</label>
-            <input type="password" id="secondPassword" class="form-control" [(ngModel)]="user.password" name="secondPassword" placeholder="Repeat Password">
-          </div>
-          
-        
-        <button (click)="onSubmit()" type="submit" class="btn btn-primary w-100">Submit</button>
-      </form>
-    </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone:</label>
+        <input type="text" id="phone" class="form-control" [(ngModel)]="user.phone" name="phone" placeholder="Phone" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="sex" class="form-label">Sex:</label>
+        <select id="sex" class="form-select" [(ngModel)]="user.sex" name="sex" required>
+          <option value="" disabled selected>Select Option</option>
+          @for (option of sexOptions ; track option ) {
+            <option [value]="option">{{ option }}</option>
+          }
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label for="howDidYouHear" class="form-label">How Did You Hear About Us:</label>
+        <select id="howDidYouHear" class="form-select" [(ngModel)]="user.howMeetPage" name="howDidYouHear" required>
+          <option value="" disabled selected>Select Option</option>
+          @for (option of howMeetPage ; track option ) {
+            <option [value]="option">{{ option }}</option>
+          }
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password:</label>
+        <input type="password" id="confirmPassword" class="form-control" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
   </div>
+</div>
