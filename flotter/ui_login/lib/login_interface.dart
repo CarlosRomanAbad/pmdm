@@ -8,7 +8,7 @@ class LoginInterface extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFE62F16), 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+        padding: const EdgeInsets.symmetric(horizontal: 80.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -44,7 +44,7 @@ class LoginInterface extends StatelessWidget {
                 foregroundColor: const Color(0xFFE62F16),
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(5),
                 ),
               ),
               child: const Text(
@@ -75,7 +75,7 @@ class LoginInterface extends StatelessWidget {
                 side: const BorderSide(color: Color.fromARGB(137, 255, 255, 255), width: 1.5),
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(5),
                 ),
               ),
               child: const Text(
