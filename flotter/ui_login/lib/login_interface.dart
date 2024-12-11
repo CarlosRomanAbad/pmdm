@@ -17,14 +17,14 @@ class LoginInterface extends StatelessWidget {
 
             const Center(
               child: Image(
-                image: NetworkImage('https://lh3.googleusercontent.com/drive-storage/AJQWtBPCwRFmb73s_ykcLmzaXbiug7tltMjZQqnLPyaw6QHgcoiZGxzG3C-qk1H_OgrSZWqvma5KjFASAfw-RiHmuaPbjz2CtfPBM1shvu4R2TwGcRc=w2940-h1680'),
+                image: NetworkImage('https://lh3.googleusercontent.com/drive-storage/AJQWtBNFnvqNRytFoT5-8qOxHUz_0tiJ5VeWUYfQOeEZ4LB4Aq4q7ABlLlwnbfOabegSfd44NxnYjcPao9bg-yn0q3H5VEVymM9UpPqubqLe3L1GAyo=w1903-h925'),
                 width: 250,
                 
               ),
             ),
             const SizedBox(height: 10),
 
-            // Subtítulo
+            // Subtítulo<
             const Center(
               child: Text(
                 'Beautiful, Private Sharing',
