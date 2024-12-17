@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:star_wars_people_list/models/people_response.dart';
 import 'package:http/http.dart' as http;
+import 'package:star_wars_people_list/screens/people_deatil_screen.dart';
+
 
 class PeopleScreen extends StatefulWidget {
   const PeopleScreen({super.key});
@@ -78,41 +80,55 @@ class _PeopleScreenState extends State<PeopleScreen> {
 
   Widget _buildPersonCard(PeopleResponse peopleResponse, int index) {
     final person = peopleResponse.results![index];
-    return Card(
-      elevation: 10.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      color: Colors.grey[850],
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-            child: Image.network(
-              'https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg',
-              width: double.infinity,
-              height: 170,
-              fit: BoxFit.cover,
-            ),
+    final heroTag = 'person_${person.name}';
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PeopleDetailScreen(peopleItem: person, heroTag: heroTag),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              person.name!,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+        );
+      },
+      child: Card(
+        elevation: 10.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        color: Colors.grey[850],
+        child: Column(
+          children: [
+            Hero(
+              tag: heroTag,
+              child: ClipRRect(
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+                child: Image.network(
+                  'https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg',
+                  width: double.infinity,
+                  height: 170,
+                  fit: BoxFit.cover,
+                ),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                person.name!,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Text(
+              'Género :  ${person.gender}',
+              style: const TextStyle(fontSize: 14, color: Colors.grey),
               textAlign: TextAlign.center,
             ),
-          ),
-          Text(
-            'Personaje :  ${index + 1}',
-            style: const TextStyle(fontSize: 14, color: Colors.grey),
-            textAlign: TextAlign.center,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
